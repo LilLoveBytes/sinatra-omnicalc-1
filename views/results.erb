@@ -1,0 +1,14 @@
+<h1> <%= @operation %>Results</h1>
+
+<% if @operation == "Square" %>
+<div>
+  <p>Number</p>
+      <p><%= @num %></p>
+
+  <p>Square</p>
+      <p><%= @answer %></p>
+</div>
+
+<a href="/square/new/">Calucalate another square</a>
+
+<% end %>

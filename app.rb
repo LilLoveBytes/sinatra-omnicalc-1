@@ -10,6 +10,9 @@ get("/square/new") do
 end
 
 get("/square/results") do
+@operation = "Square"
+@num = params.fetch("user_num").to_i
+@answer = @num.to_f ** 2
  erb(:results)
 end
 
