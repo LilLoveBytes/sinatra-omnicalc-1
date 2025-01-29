@@ -13,7 +13,7 @@ end
 
 get("/square/results") do
   @operation = "Square"
-  @num = params.fetch("user_num").to_i
+  @num = params.fetch("user_num")
   @answer = @num.to_f ** 2
   erb(:results)
 end
@@ -25,8 +25,8 @@ end
 
 get("/square_root/results") do
   @operation = "Square Root"
-  @num = params.fetch("user_num").to_i
-  @answer = Integer.sqrt(@num).to_f
+  @num = params.fetch("user_num")
+  @answer = Math.sqrt(@num.to_f)
  erb(:results)
 end
 
