@@ -1,4 +1,4 @@
-<h1> <%= @operation %>Results</h1>
+<h1> <%= @operation %> Results</h1>
 
 <% if @operation == "Square" %>
 <div>
@@ -9,6 +9,30 @@
       <p><%= @answer %></p>
 </div>
 
-<a href="/square/new/">Calucalate another square</a>
+<a href="/square/new">Calucalate another square</a>
+
+<% elsif @operation == "Square Root" %>
+<div>
+  <p>Number</p>
+      <p><%= @num %></p>
+
+  <p>Square Root</p>
+      <p><%= @answer %></p>
+</div>
+<a href="/square_root/new">Calculate another square root</a>
+
+<% elsif @operation == "Random" %>
+<div>
+  <p>Minimum</p>
+      <p><%= @min %></p>
+
+  <p>Maximum</p>
+      <p><%= @max %></p>
+
+  <p>Random Number</p>
+      <p><%= @answer %></p>
+
+</div>
+<a href="/random/new">Pick another random number</a>
 
 <% end %>

@@ -1,8 +1,30 @@
 
+<% if @operation == "Square" %>
+  <form action= "/square/results">
+  <div>
+    <label for="user_num">Enter a number</label>
+    <input id="user_num" name="user_num" placeholder="Any number">
+    <button> Calculate square </button>
+  </div>
 
-<form action= "/square/results">
-<div>
-  <label for="user_num">Enter a number</label>
-  <input id="user_num" name="user_num" placeholder="Any number">
-  <button> Calculate square </button>
-</div>
+<% elsif @operation == "Square Root" %>
+  <form action= "/square_root/results">
+  <div>
+    <label for="user_num">Enter a number</label>
+    <input id="user_num" name="user_num" placeholder="Any number">
+    <button> Calculate square root</button>
+  </div>
+
+<% elsif @operation == "Random" %>
+  <form action= "/random/results">
+  <div>
+    <label for="user_min">Minimum</label>
+    <input id="user_min" name="user_min" placeholder="E.g. 1.5">
+    <label for="user_max">Maximum</label>
+    <input id="user_max" name="user_max" placeholder="E.g. 4.5">
+    <button> Pick random number</button>
+  </div>
+
+
+
+<% end %>

@@ -2,40 +2,53 @@ require "sinatra"
 require "sinatra/reloader"
 
 get("/") do
- erb(:home)
+  @operation = "Square"
+  erb(:home)
 end
 
 get("/square/new") do
- erb(:home)
+  @operation = "Square"
+  erb(:home)
 end
 
 get("/square/results") do
-@operation = "Square"
-@num = params.fetch("user_num").to_i
-@answer = @num.to_f ** 2
- erb(:results)
+  @operation = "Square"
+  @num = params.fetch("user_num").to_i
+  @answer = @num.to_f ** 2
+  erb(:results)
 end
 
 get("/square_root/new") do
- erb(:home)
+  @operation = "Square Root"
+  erb(:home)
 end
 
 get("/square_root/results") do
- erb(:home)
+  @operation = "Square Root"
+  @num = params.fetch("user_num").to_i
+  @answer = Integer.sqrt(@num).to_f
+ erb(:results)
 end
 
 get("/random/new") do
- erb(:home)
+  @operation = "Random"
+  erb(:home)
 end
 
 get("/random/results") do
- erb(:home)
+  @operation = "Random"
+  @min = params.fetch("user_min").to_f
+  @max = params.fetch("user_max").to_f
+  @answer = rand(@min..@max).to_f
+  erb(:results)
 end
 
 get("/payment/new") do
- erb(:home)
+  @operation = "Payment"
+  erb(:home)
 end
 
 get("/payment/results") do
- erb(:home)
+  @operation = "Payment"
+  erb(:home)
 end
