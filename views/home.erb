@@ -25,6 +25,20 @@
     <button> Pick random number</button>
   </div>
 
+<% elsif @operation == "Payment" %>
+  <form action= "/payment/results">
+  <div>
+    <label for="apr">APR</label>
+    <input id="apr" name="apr" placeholder="E.g. 5.42">
+    <label for="years">Number of years</label>
+    <input id="years" name="years" placeholder="To repay">
+    <label for="principal">Principal</label>
+    <input id="principal" name="principal" placeholder="How much principal">
+    <button> Calculate monthly payment</button>
+  </div>
+
+
+
 
 
 <% end %>

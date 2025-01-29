@@ -50,5 +50,15 @@ end
 
 get("/payment/results") do
   @operation = "Payment"
-  erb(:home)
+  @apr = params.fetch("apr").to_f
+  @years = params.fetch("years").to_i
+  @principal = params.fetch("principal").to_f
+
+  r = @apr / 100 / 12
+  n = @years * 12
+  p = @principal
+  @numerator = r * p
+  @denominator = 1 - (1 + r)**(-n)
+  @answer = (@numerator / @denominator).to_fs(:currency)
+  erb(:results)
 end

@@ -35,4 +35,21 @@
 </div>
 <a href="/random/new">Pick another random number</a>
 
+<% elsif @operation == "Payment" %>
+<div>
+  <p>APR</p>
+      <p><%= @apr.to_fs(:percentage, {:precision => 4}) %></p>
+
+  <p>Number of years</p>
+      <p><%= @years %></p>
+
+  <p>Principal</p>
+      <p><%= @principal.to_fs(:currency) %></p>
+
+  <p>Payment</p>
+      <p><%= @answer %></p>
+
+</div>
+<a href="/payment/new">Calculate another payment</a>
+
 <% end %>
